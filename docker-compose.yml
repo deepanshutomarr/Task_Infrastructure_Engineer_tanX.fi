@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    command: python main.py
+
+  test:
+    build: .
+    volumes:
+      - .:/app
+    command: python -m unittest discover -s tests
